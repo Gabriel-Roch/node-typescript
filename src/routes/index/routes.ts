@@ -1,8 +1,8 @@
 import express, { Request, Response } from "express"
 const route = express()
-import { homeController } from "../../controller/index"
+import { controllers } from "../../controller/controllers"
 
 route.route("/")
-    .get(async (req: Request, res: Response) => homeController.home(req, res))
+    .get((req: Request, res: Response) => controllers.baseController(req, res))
 
 export { route }
